@@ -30,6 +30,25 @@
  *   7) non-functional requirements missing:
  *   - security of the account and its data
  *   - the correctness and how it handles the money and the calculations
+ *   
+ *   Activity 4:
+ *   - Writing coding standards for money calculations: QA. 
+ *   create preventive measure to ensure there would be no calculation mistakes
+ *   - Running unit tests for withdrawal behaviour: QC. 
+ *   verifies if a specific function works as intended and if it is working correctly
+ *   - Reviewing requirements for ambiguity: QA.
+ *   improves the quality of the requirements and makes sure that there are no implementations misinterpreted
+ *   - Testing negative deposit unit: QC.
+ *   makes sure that the deposit function is working properly for edge cases and makes sure that there are no faults in input handling
+ *   - Analysing repeated transaction defects: QA.
+ *   Root cause analysis finds the source of the defect and stops it from happening again.
+ *   - reporting a failed test case: QC.
+ *   records a defect found that is to be fixed
+ *   - Creating a checklist for financial validation rules: QA.
+ *   makes sure that rules are being followed and that it is high quality
+ *   - Retesting after fixing withdrawal logic: QC.
+ *   makes sure that the changes fixed the issue and the code is working as intended
+ *   
  *
 */
 using ENSE707_Week1_Lab_23206450;
