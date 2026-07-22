@@ -14,6 +14,15 @@ namespace ENSE707_Week1_Lab_23206450
         //initializes the fields of the bank account
         public BankAccount(string accountHolder, decimal openingBalance)
         {
+            if (string.IsNullOrEmpty(accountHolder))
+            {
+                throw new ArgumentNullException("Account Holder name needed");
+            }
+
+            if (openingBalance < 0)
+            {
+                throw new ArgumentOutOfRangeException("Opening balance cannot be negaitve");
+            }
             AccountHolder = accountHolder;
             Balance = openingBalance;
         }
@@ -21,27 +30,35 @@ namespace ENSE707_Week1_Lab_23206450
         //calculates the sum current balance and the Deposit amount for the new balance
         public void Deposit(decimal amount)
         {
-            if (amoun)
+            if (amount <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Deposit amount must be positive");
+            }
             Balance += amount;
         }
 
         //Subtracts the withdrawal amount from balance for the new balance when user withdraw
         public bool Withdraw(decimal amount)
         {
-            if (Balance <= 0)
+            if (amount <= 0)
             {
-                Console.WriteLine("Insufficient funds.");
-                return false;
-            }
-            else
-            {
-                Balance -= amount;
+                throw new ArgumentOutOfRangeException("Withdrawal amount must be positive");
             }
 
+            if (amount > Balance)
+            {
+                return false;
+            }
+                Balance -= amount;
+                return true;
         }
         //calculates the transaction fee by multiplying the amount by 2%
         public decimal CalculateTransactionFee(decimal amount)
         {
+            if (amount <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Transaction amount must be positive");
+            }
             return amount * 0.02m;
         }
     }
