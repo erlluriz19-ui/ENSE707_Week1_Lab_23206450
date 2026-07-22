@@ -49,14 +49,22 @@
  *   - Retesting after fixing withdrawal logic: QC.
  *   makes sure that the changes fixed the issue and the code is working as intended
  *   
- *
+ * Activity 9:
+ * 1) The Stakeholders are the people who would be using the banking app to make withdrawals and deposits and the people who would be managing the bank accounts. The developers are the people who would be creating the banking app and making sure it works as intended. 
+ * The testers are the people who would be testing the banking app to make sure it works as intended and that there are no bugs or issues with the app.
+ * 2) Quality to the stakeholders mean that the app should respond quickly (under 2 seconds), must be very secure so that no data is leaked, easy to maintain
+ * so that the developers can fix issues that could appear at anytime and it should be intuitive and easy to use for the users.
+ * 3) defects through testing was detected with withdrawing negative amounts, depositing negative amounts and opening an account with a negative balance.
+ * 4) deposit and withdrawing 0 and below could have been prevented through QA activities
+ * 5) Copilot helped by helping me understand where issues occur and where tests fail so that i could fix them
+ * 6) a suggestion for the throwexceptions in the BankAccount class where it wants to use ArgumentOutOfRange Exception instead of Argument Exception which would be
+ * unnecessary.
 */
 using ENSE707_Week1_Lab_23206450;
 
 BankAccount account = new BankAccount("Student User", 100);
 account.Deposit(50);
 account.Withdraw(30);
-account.Withdraw(0);
 
 Console.WriteLine($"Account holder: {account.AccountHolder}");
 Console.WriteLine($"Current balance: {account.Balance}");

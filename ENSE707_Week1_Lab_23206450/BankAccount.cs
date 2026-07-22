@@ -16,12 +16,12 @@ namespace ENSE707_Week1_Lab_23206450
         {
             if (string.IsNullOrEmpty(accountHolder))
             {
-                throw new ArgumentNullException("Account Holder name needed");
+                throw new ArgumentException("Account Holder name needed");
             }
 
             if (openingBalance < 0)
             {
-                throw new ArgumentOutOfRangeException("Opening balance cannot be negaitve");
+                throw new ArgumentException("Opening balance cannot be negaitve");
             }
             AccountHolder = accountHolder;
             Balance = openingBalance;
@@ -32,7 +32,7 @@ namespace ENSE707_Week1_Lab_23206450
         {
             if (amount <= 0)
             {
-                throw new ArgumentOutOfRangeException("Deposit amount must be positive");
+                throw new ArgumentException("Deposit amount must be positive");
             }
             Balance += amount;
         }
@@ -42,12 +42,12 @@ namespace ENSE707_Week1_Lab_23206450
         {
             if (amount <= 0)
             {
-                throw new ArgumentOutOfRangeException("Withdrawal amount must be positive");
+                throw new ArgumentException("Withdrawal amount must be positive");
             }
 
             if (amount > Balance)
             {
-                return false;
+                throw new ArgumentException(nameof(amount), "Withdrawal amount cannot exceed the account balance");
             }
                 Balance -= amount;
                 return true;
