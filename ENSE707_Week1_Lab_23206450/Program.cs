@@ -1,12 +1,12 @@
 ﻿//ENSE707 Bank Lab (Lab1)
 
-/* Activity 1
+/* Activity 1:
  * 1) commiting regularly can make it easier to roll back to an older version if a fatal bug affecting the software 
  * 
  * 2) by showing that the person working on the project has been continuously working on it by making meaningful commits and showing
  * what they have worked on in their session of writing up lines for the project
  *
- *Activity3
+ *Activity 3:
  * 1) It would continue the calculations which would breach Functional Stability as the account would start in debt,
  * this would likely be invalid for the system which could lead to incorrect account behaviour. fix by making 
  * be validated first to ensure it is zero or more opening balance 
@@ -26,6 +26,10 @@
  *   - withdrawing should always be positive 
  *   - depositing should be positive
  *   - account should be validated for its opening balance and current balance
+ *   
+ *   7) non-functional requirements missing:
+ *   - security of the account and its data
+ *   - the correctness and how it handles the money and the calculations
  *
 */
 using ENSE707_Week1_Lab_23206450;
