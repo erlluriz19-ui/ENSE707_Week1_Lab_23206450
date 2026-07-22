@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ENSE707_Week1_Lab_23206450
 {
-    internal class BankAccount
+    public class BankAccount
     {
         public string AccountHolder { get; set; }
         public decimal Balance { get; private set; }
@@ -21,14 +21,23 @@ namespace ENSE707_Week1_Lab_23206450
         //calculates the sum current balance and the Deposit amount for the new balance
         public void Deposit(decimal amount)
         {
-            Balance = Balance + amount;
+            if (amoun)
+            Balance += amount;
         }
 
         //Subtracts the withdrawal amount from balance for the new balance when user withdraw
         public bool Withdraw(decimal amount)
         {
-            Balance = Balance - amount;
-            return true;
+            if (Balance <= 0)
+            {
+                Console.WriteLine("Insufficient funds.");
+                return false;
+            }
+            else
+            {
+                Balance -= amount;
+            }
+
         }
         //calculates the transaction fee by multiplying the amount by 2%
         public decimal CalculateTransactionFee(decimal amount)

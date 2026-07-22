@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net8.0</TargetFramework>
+	<IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="MSTest.TestAdapter" Version="3.0.2" />
+	<PackageReference Include="MSTest.TestFramework" Version="3.0.2" />
+	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\ENSE707_Week1_Lab_23206450\ENSE707_Week1_Lab_23206450.csproj" />
+  </ItemGroup>
+
+</Project>
