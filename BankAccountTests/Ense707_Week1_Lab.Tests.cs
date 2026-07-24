@@ -7,6 +7,7 @@ namespace BankAccountTests
     [TestClass]
     public sealed class BankAccountTests
     {
+        //tests if depositing increases the balance correctly
         [TestMethod]
         public void Deposit_PositiveAmount_IncreasesBalance()
         {
@@ -16,6 +17,7 @@ namespace BankAccountTests
 
             Assert.AreEqual(150, account.Balance);
         }
+        //tests if withdrawing decreases the balance correctly
         [TestMethod]
         public void Withdraw_ValidAmount_DecreasesBalance()
         {
@@ -25,12 +27,13 @@ namespace BankAccountTests
 
             Assert.AreEqual(70, account.Balance);
         }
+        //tests if the throw exception works for negative opening balance
         [TestMethod]
         public void Constructor_NegativeOpeningBalance_ThrowsException()
         {
             Assert.ThrowsException<ArgumentException>(() =>
             new BankAccount("Test User", -10));
-        }
+        }//tests if throwexception works for negative deposit amount
 
         [TestMethod]
         public void Deposit_NegativeAmount_ThrowsException()
@@ -40,7 +43,7 @@ namespace BankAccountTests
             Assert.ThrowsException<ArgumentException>(() =>
             account.Deposit(-20));
         }
-
+        //tests if throwexception works for negative withdraw amount
         [TestMethod]
         public void Withdraw_NegativeAmount_ThrowsException()
         {
@@ -49,7 +52,7 @@ namespace BankAccountTests
             Assert.ThrowsException<ArgumentException>(() =>
             account.Withdraw(-20));
         }
-
+        //tests if the transaction fee is calculated correctly for a valid amount
         public void CalculateTransactionFee_ValidAmount_ReturnsTwoPercentFee()
         {
             BankAccount account = new BankAccount("Test User", 100);
